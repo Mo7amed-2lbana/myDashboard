@@ -1,0 +1,350 @@
+@import "../../styling/class";
+
+.dashboard {
+  background-color: $bgDashboard;
+  flex: 1;
+
+  h2 {
+    position: relative;
+    width: fit-content;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 75%;
+      background: #fff;
+      height: 4px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 25%;
+      background: #000;
+      height: 4px;
+    }
+  }
+
+  p {
+    color: $mainColorText;
+  }
+
+  .Btn {
+    text-align: right;
+
+    @media (max-width: 767px) {
+      & {
+        text-align: center;
+      }
+    }
+    padding: 20px 10px 0 0;
+    button {
+      color: #fff;
+      padding: 4px 10px;
+      transition: $mainTransition;
+      &:hover {
+        background-color: $profileBottomHover;
+      }
+    }
+  }
+
+  .welcome {
+    .content {
+      background: $bgDashboardContent;
+      .text {
+        p {
+          font-weight: 500;
+        }
+      }
+      .img {
+        img {
+          width: 200px;
+        }
+      }
+    }
+
+    .dashboard-profile {
+      position: relative;
+      img {
+        width: 64px;
+        height: 64px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 5px #ddd;
+        border-radius: 50%;
+        padding: 2px;
+        position: absolute;
+        top: -32px;
+        left: 20px;
+      }
+
+      .dashboard-prfile-text {
+        border-top: 1px solid $bgDashboardContent;
+        border-bottom: 1px solid $bgDashboardContent;
+        h5 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .Quick-Draft {
+    input,
+    textarea {
+      background-color: $bgDashboardContent;
+      font-size: 13px;
+    }
+    textarea {
+      resize: none;
+      min-height: 180px;
+    }
+  }
+}
+
+.yearly-target {
+  .earns {
+    .item {
+      .icon {
+        width: 80px;
+        height: 80px;
+
+        // dollar
+        &.icon-dollar {
+          background: $mainColorDollar;
+          color: $secondColorDollar;
+        }
+
+        // code
+        &.icon-code {
+          background: $mainColorCode;
+          color: $secondColorCode;
+        }
+
+        // team
+        &.icon-team {
+          background: $mainColorTeam;
+          color: $secondColorTeam;
+        }
+
+        svg {
+          font-size: 20px;
+        }
+      }
+
+      .detail {
+        flex: 1;
+
+        .line {
+          position: relative;
+          height: 4px;
+
+          // dollar
+          &.line-dollar {
+            background: $mainColorDollar;
+          }
+
+          // code
+          &.line-code {
+            background: $mainColorCode;
+          }
+
+          // team
+          &.line-team {
+            background: $mainColorTeam;
+          }
+
+          span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+          }
+
+          // dollar
+          &.line-dollar span {
+            background-color: $secondColorDollar;
+            width: 80%;
+          }
+
+          // code
+          &.line-code span {
+            background-color: $secondColorCode;
+            width: 55%;
+          }
+
+          // team
+          &.line-team span {
+            background-color: $secondColorTeam;
+            width: 75%;
+          }
+
+          &::before {
+            position: absolute;
+            top: -45px;
+            padding: 3px 8px;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+          }
+
+          &.line-dollar::before {
+            content: "80%";
+            right: calc(20% - 16px);
+            background-color: $secondColorDollar;
+          }
+
+          &.line-code::before {
+            content: "55%";
+            right: calc(45% - 16px);
+            background-color: $secondColorCode;
+          }
+
+          &.line-team::before {
+            content: "75%";
+            right: calc(25% - 16px);
+            background-color: $secondColorTeam;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: -14px;
+            border: 7px solid;
+          }
+
+          &.line-dollar::after {
+            border-color: $secondColorDollar transparent transparent transparent;
+            right: 20%;
+          }
+
+          &.line-code::after {
+            border-color: $secondColorCode transparent transparent transparent;
+            right: 45%;
+          }
+
+          &.line-team::after {
+            border-color: $secondColorTeam transparent transparent transparent;
+            right: calc(100% - 75%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tickets {
+  .support {
+    .item {
+      border: 1px solid #ccc;
+      cursor: pointer;
+      transition: $mainTransition;
+
+      &.item-first:hover {
+        border: 1px solid $secondColorCode;
+      }
+
+      &.item-second:hover {
+        border: 1px solid $secondColorDollar;
+      }
+
+      &.item-third:hover {
+        border: 1px solid $secondColorTeam;
+      }
+
+      &.item-fours:hover {
+        border: 1px solid $redClass;
+      }
+
+      svg {
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .total {
+        color: $secondColorCode;
+      }
+
+      .pending {
+        color: $secondColorDollar;
+      }
+
+      .check {
+        color: $secondColorTeam;
+      }
+
+      .delete {
+        color: $redClass;
+      }
+
+      h3 {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.latest-news {
+  .news {
+    .new {
+      
+      margin-top: 20px;
+      border-bottom: 1px solid $bgDashboardContent;
+      &.last-new{
+        border-bottom: 1px solid transparent;
+      }
+      &.layers{
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba(255,255,255,.5);
+        }
+      }
+      .parent {
+        .img {
+          img {
+            width: 100px;
+            border-radius: 6px;
+          }
+        }
+
+        .text-news {
+          h3 {
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      span {
+        font-size: 13px;
+        background-color: $bgDashboardContent;
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+    }
+
+    .delete{
+      transition: $mainTransition;
+      cursor: pointer;
+      &:hover{
+        color: $redClass;
+      }
+    }
+  }
+}

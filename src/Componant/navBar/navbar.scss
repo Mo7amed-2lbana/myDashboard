@@ -1,0 +1,32 @@
+@import "../../styling/class";
+
+
+
+.search-inpt {
+  svg {
+    left: 10px;
+    color: #888888;
+  }
+}
+
+.icons {
+  .alarm {
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      translate: -50%;
+      width: 10px;
+      height: 10px;
+      background-color: #{$redClass};
+      border-radius: 50%;
+    }
+  }
+
+  .user{
+    img{
+        width: 35px;
+    }
+  }
+}
